@@ -2,7 +2,7 @@ import LogoImage from "../assets/Talent-jobs.png"
 
 const Footer = () => {
     return (
-      <footer className="bg-gray-300 text-gray-700 py-8">
+      <footer className="bg-black text-gray-200 py-8">
         <div className="container mx-auto px-4">
           {/* Top Section */}
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 text-sm">
@@ -68,7 +68,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center mt-8 border-t pt-4 px-5">
             <div className="flex items-center space-x-2">
                 <img src= {LogoImage} alt="Talent Jobs" className="h-32 w-32" />
-                {/* <span className="text-gray-700 text-xl font-semibold">Talent Jobs</span> */}
+                <span className="text-gray-100 text-xl font-semibold">Talent Jobs</span>
             </div>
             <p className="text-sm">&copy; Talent Jobs 2025. All rights reserved.</p>
             {/* Social Icons */}

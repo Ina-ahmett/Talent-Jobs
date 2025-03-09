@@ -1,3 +1,6 @@
+import Footer from "../components/footer";
+import Header from "../components/header";
+
 const categories = [
   { icon: <i className="fas fa-laptop-code text-2xl"></i>, label: "Programming & Tech" },
   { icon: <i className="fas fa-paint-brush text-2xl"></i>, label: "Graphics & Design" },

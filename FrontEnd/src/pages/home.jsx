@@ -2,15 +2,15 @@ import Category from "../components/Category"
 import Footer from "../components/footer"
 import Header from "../components/header"
 import JobList from "../components/JobDetails"
-import CategoriesSection from "../components/jobs"
+import CategoriesSection from "./jobs"
 import Services from "../components/services"
+import Gallery from "../components/gallery"
 
 const Home = () => {
     return(
         <>
-            <Header/>
             <section
-                className="bg-cover bg-center h-[550px] flex flex-col items-center justify-center text-white text-center px-4 bg-blue-600"
+                className="bg-cover bg-center h-[550px] flex flex-col items-center justify-center text-white text-center px-4 bg-black"
                 style={{ backgroundImage: "url('/your-background-image.jpg')" }}>
                 {/* Heading and Subheading */}
                 <h1 className="text-3xl md:text-5xl font-bold mb-4">Find Your Dream Job Today!</h1>
@@ -72,14 +72,12 @@ const Home = () => {
 
             <Category/>
 
+            <JobList/>
 
             <Services/>
 
-            <CategoriesSection/>
+            <Gallery/>
 
-            <JobList/>
-
-            <Footer/>
         </>
     )
 }
