@@ -1,6 +1,7 @@
 import Category from "../components/Category"
 import Footer from "../components/footer"
 import Header from "../components/header"
+import JobList from "../components/JobDetails"
 import CategoriesSection from "../components/jobs"
 import Services from "../components/services"
 
@@ -75,6 +76,8 @@ const Home = () => {
             <Services/>
 
             <CategoriesSection/>
+
+            <JobList/>
 
             <Footer/>
         </>
