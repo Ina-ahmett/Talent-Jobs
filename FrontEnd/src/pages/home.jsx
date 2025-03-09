@@ -1,11 +1,12 @@
 import Category from "../components/Category"
 import Footer from "../components/footer"
 import Header from "../components/header"
+import CategoriesSection from "../components/jobs"
 import Services from "../components/services"
 
-const Home = () =>{
+const Home = () => {
     return(
-        <div>
+        <>
             <Header/>
             <section
                 className="bg-cover bg-center h-[550px] flex flex-col items-center justify-center text-white text-center px-4 bg-blue-600"
@@ -67,12 +68,16 @@ const Home = () =>{
                 </div>
             </section>
 
+
             <Category/>
+
 
             <Services/>
 
+            <CategoriesSection/>
+
             <Footer/>
-        </div>
+        </>
     )
 }
 export default Home
