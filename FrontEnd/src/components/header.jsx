@@ -1,59 +1,74 @@
-import React, { useState } from 'react';
-import LogoImage from "../assets/Talent-jobs.png"
+import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+import LogoImage from "../assets/Talent-Jobs.png";
+import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
-  // State to manage mobile menu toggle
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
-  const handleLoginClick = () => {
-    navigate("/login"); // Move to Login Page
-  };
-
   return (
-    <header className="bg-black p-1">
-      <div className="max-w-screen-xl mx-auto flex justify-between items-center">
-        {/* Logo */}
-        <div className="flex items-center">
-          <img src={LogoImage} alt="Talent Jobs" className="h-30 w-42" />
-          <span className="text-white text-xl font-semibold">Talent Jobs</span>
-        </div>
-
-        {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex space-x-7 text-white">
-        <a href="/" className="hover:text-white text-gray-500">Home</a>
-          <a href="/jobs" className="hover:text-white text-gray-500">Jobs</a>
-          <a href="/jobDetails" className="hover:text-white text-gray-500">Job Details</a>
-          <a href="/" className="hover:text-white text-gray-500">About Us</a>
-          <a href="/" className="hover:text-white text-gray-500">Contact Us</a>
-        </nav>
-
-        {/* Join Now Button - Desktop */}
-        <button className="bg-yellow-500 text-white py-2 px-4 rounded-full hover:bg-yellow-600 hidden md:block">
-          Join Now
-        </button>
-
-        {/* Mobile Menu Button */}
-        <div className="md:hidden">
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white">
-            <i className={`fas fa-${isMenuOpen ? 'times' : 'bars'}`}></i> {/* Toggle between hamburger and close icon */}
-          </button>
-        </div>
+    <div className="bg-white flex justify-between items-center px-6 py-4 md:px-10 ">
+      {/* Logo Section */}
+      <div className="flex items-center gap-3">
+        <img src={LogoImage} alt="Sawirka Logada" className="w-12 h-12" />
+        <h1 className="text-2xl font-bold">Talent-<span className="text-blue-500">Jobs</span></h1>
       </div>
+      
+      {/* Desktop Navigation */}
+      <ul className="hidden md:flex gap-6 text-lg">
+        <NavLink to='/' className= {({ isActive }) => isActive? "border-b-2 border-blue-500 text-blue-500 font-semibold": "hover:text-gray-600 hover:border-b-2 hover:border-blue-400"}> 
+          <li className="cursor-pointer px-3 py-1 transition-all duration-300" >Home</li> 
+        </NavLink>
 
-      {/* Mobile Navigation Links */}
-      <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
-        <nav className="flex flex-col space-y-4 bg-blue-500 p-4 text-white">
-          <a href="/" className="hover:text-gray-200">Home</a>
-          <a href="/jobs" className="hover:text-gray-200">Jobs</a>
-          <a href="/job-details" className="hover:text-gray-200">Job Details</a>
-          <button onClick={handleLoginClick} className="bg-yellow-500 text-white py-2 px-4 rounded-full hover:bg-yellow-600">
+        <NavLink to="jobs" className= {({ isActive }) => isActive? "border-b-2 border-blue-500 text-blue-500 font-semibold": "hover:text-gray-600 hover:border-b-2 hover:border-blue-400"}> 
+          <li className="cursor-pointer px-3 py-1 transition-all duration-300">Jobs</li> 
+        </NavLink> 
+
+        <NavLink to="about"className={({ isActive }) =>isActive? "border-b-2 border-blue-500 text-blue-500 font-semibold": "hover:text-gray-600 hover:border-b-2 hover:border-blue-400"}> 
+          <li className="cursor-pointer px-3 py-1 transition-all duration-300">About</li>
+        </NavLink>
+
+        <NavLink to="contact" className={({ isActive }) =>isActive? "border-b-2 border-blue-500 text-blue-500 font-semibold": "hover:text-gray-600 hover:border-b-2 hover:border-blue-400"}> 
+          <li className="cursor-pointer px-3 py-1 transition-all duration-300">Contacts</li> 
+        </NavLink>
+      </ul>
+      
+      {/* Join Button */}
+      <button className="hidden md:block bg-blue-500 px-4 py-2 rounded-md text-white hover:bg-blue-600" onClick={ () => navigate("/login") } >
+        Join Now
+      </button>
+      
+      {/* Mobile Menu Button */}
+      <button className="md:hidden text-2xl" onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? <FaTimes /> : <FaBars />}
+      </button>
+      
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <ul className="absolute top-16 left-0 w-full bg-white shadow-md flex flex-col items-center gap-4 py-6 md:hidden">
+         <NavLink to='/' className= {({ isActive }) => isActive? "border-b-2 border-blue-500 text-blue-500 font-semibold": "hover:text-gray-600 hover:border-b-2 hover:border-blue-400"}> 
+          <li className="cursor-pointer px-3 py-1 transition-all duration-300" >Home</li> 
+        </NavLink>
+
+        <NavLink to="jobs" className= {({ isActive }) => isActive? "border-b-2 border-blue-500 text-blue-500 font-semibold": "hover:text-gray-600 hover:border-b-2 hover:border-blue-400"}> 
+          <li className="cursor-pointer px-3 py-1 transition-all duration-300">Jobs</li> 
+        </NavLink> 
+
+        <NavLink to="about"className={({ isActive }) =>isActive? "border-b-2 border-blue-500 text-blue-500 font-semibold": "hover:text-gray-600 hover:border-b-2 hover:border-blue-400"}> 
+          <li className="cursor-pointer px-3 py-1 transition-all duration-300">About</li>
+        </NavLink>
+
+        <NavLink to="contact" className={({ isActive }) =>isActive? "border-b-2 border-blue-500 text-blue-500 font-semibold": "hover:text-gray-600 hover:border-b-2 hover:border-blue-400"}> 
+          <li className="cursor-pointer px-3 py-1 transition-all duration-300">Contacts</li> 
+        </NavLink>
+          <button className="bg-blue-500 px-4 py-2 rounded-md text-white hover:bg-blue-600" onClick={ () => navigate("/login") }>
             Join Now
           </button>
-        </nav>
-      </div>
-    </header>
+        </ul>
+      )}
+    </div>
   );
 };
 
