@@ -1,6 +1,8 @@
 import heroSectionImg from "../assets/heroSection.jpg"
 import CategoryProps from "../components/Category"
 import TopCompanies from "../components/companies";
+import Footer from "../components/footer";
+import Header from "../components/header";
 import JobItem from "../components/JobItem"
 import { motion } from "framer-motion";
 
@@ -82,6 +84,8 @@ const Home = () => {
       
 
     return (
+        <>
+        <Header/>
         <div>
             <div className="bg-white flex flex-col md:flex-row items-center justify-evenly px-6 md:px-16 py-10">
                 {/* Left Side */}
@@ -207,6 +211,8 @@ const Home = () => {
                 </motion.div>
             </div>
         </div>
+        <Footer/>
+        </>
     );
 }
 

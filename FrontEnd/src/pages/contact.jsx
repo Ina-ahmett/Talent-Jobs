@@ -1,8 +1,12 @@
 import doneImage from "../assets/done.jpg"   
+import Footer from "../components/footer";
+import Header from "../components/header";
 
 
 export default function Contact() {
     return (
+      <>
+      <Header/>
       <div className="flex flex-col items-center w-full min-h-screen px-4 py-10 bg-gray-100">
         <div className="sm:flex sm:gap-10">
             <div className="w-[400px] max-w-4xl mx-auto mt-20 ml-5 sm:ml-0">
@@ -32,6 +36,8 @@ export default function Contact() {
             <img src={doneImage} alt="done image" className="sm:w-[1130px] sm:h-[500px]  rounded-xl" />               
         </div>
       </div>
+      <Footer/>
+      </>
     );
   }
   

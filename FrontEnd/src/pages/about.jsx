@@ -1,9 +1,12 @@
 import React from "react";
 import wadaJir from "../assets/wadajir.jpg";
 import heshiis from "../assets/heshiis.png";
+import Header from "../components/header";
 
 const About = () => {
   return (
+    <>
+    <Header/>
     <div className="max-w-6xl mx-auto px-6 py-12">
       <h1 className="text-4xl font-bold text-center text-blue-600 mb-6">About Talent Jobs</h1>
       <p className="text-lg text-gray-700 text-center mb-10">
@@ -49,6 +52,7 @@ const About = () => {
 
       
     </div>
+    </>
   );
 };
 

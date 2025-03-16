@@ -22,15 +22,15 @@ const Header = () => {
           <li className="cursor-pointer px-3 py-1 transition-all duration-300" >Home</li> 
         </NavLink>
 
-        <NavLink to="jobs" className= {({ isActive }) => isActive? "border-b-2 border-blue-500 text-blue-500 font-semibold": "hover:text-gray-600 hover:border-b-2 hover:border-blue-400"}> 
+        <NavLink to="/jobs" className= {({ isActive }) => isActive? "border-b-2 border-blue-500 text-blue-500 font-semibold": "hover:text-gray-600 hover:border-b-2 hover:border-blue-400"}> 
           <li className="cursor-pointer px-3 py-1 transition-all duration-300">Jobs</li> 
         </NavLink> 
 
-        <NavLink to="about"className={({ isActive }) =>isActive? "border-b-2 border-blue-500 text-blue-500 font-semibold": "hover:text-gray-600 hover:border-b-2 hover:border-blue-400"}> 
+        <NavLink to="/about"className={({ isActive }) =>isActive? "border-b-2 border-blue-500 text-blue-500 font-semibold": "hover:text-gray-600 hover:border-b-2 hover:border-blue-400"}> 
           <li className="cursor-pointer px-3 py-1 transition-all duration-300">About</li>
         </NavLink>
 
-        <NavLink to="contact" className={({ isActive }) =>isActive? "border-b-2 border-blue-500 text-blue-500 font-semibold": "hover:text-gray-600 hover:border-b-2 hover:border-blue-400"}> 
+        <NavLink to="/contact" className={({ isActive }) =>isActive? "border-b-2 border-blue-500 text-blue-500 font-semibold": "hover:text-gray-600 hover:border-b-2 hover:border-blue-400"}> 
           <li className="cursor-pointer px-3 py-1 transition-all duration-300">Contacts</li> 
         </NavLink>
       </ul>

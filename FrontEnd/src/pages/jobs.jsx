@@ -1,5 +1,7 @@
 import jobSearchImage from "../assets/jobheader.jpg"
 import TopCompanies from "../components/companies";
+import Footer from "../components/footer";
+import Header from "../components/header";
 import JobCard from "../components/jobsComponents";
 const Jobs = () => {
     // jobs maping madama aan isticmaleynin API
@@ -74,6 +76,8 @@ const Jobs = () => {
     ]
 
     return(
+        <>
+        <Header/>
         <div>
             {/* jobs heroSection */}
             <div className="w-full min-h-screen flex flex-col-reverse md:flex-row items-center justify-center gap-12 px-6 md:px-16 py-12 bg-white">  
@@ -124,6 +128,8 @@ const Jobs = () => {
             {/* campanies data view  */}
             <TopCompanies companies={companiesData}/>
         </div>
+        <Footer/>
+        </>
     )
 }
 export default Jobs
