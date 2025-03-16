@@ -4,8 +4,9 @@ import About from "./pages/about"
 import Jobs from "./pages/jobs"
 import Contact from "./pages/contact"
 import Login from "./pages/login"
-import EmployeeSignup from "./pages/signUpEmployee"
 import Dashboard from "./pages/dashboard"
+import CompanyDash from "./pages/companyDash"
+import SignUp from "./pages/signup"
 
 const App = () =>{
   return(
@@ -16,9 +17,10 @@ const App = () =>{
         <Route path="/jobs" element={<Jobs/>}/>
         <Route path="/about" element={<About/>} />
         <Route path="/contact" element={<Contact/>}/>
-        <Route path="/login" element={<Login  hideHeaderFooter={true} />} />
-        <Route path="/EmpSignUp" element={<EmployeeSignup hideHeaderFooter={true}/>}/>
-        <Route path="dashboard" element={<Dashboard/>}/>
+        <Route path="/login" element={<Login/>} />
+        <Route path="/dashboard" element={<Dashboard/>}/>
+        <Route path="/create" element={<SignUp/>}/>
+        <Route path="/Reading" element={<CompanyDash/>}/>
       </Routes>
     </div>
   )
