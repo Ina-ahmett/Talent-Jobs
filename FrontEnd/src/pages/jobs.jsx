@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import jobSearchImage from "../assets/jobheader.jpg"
 import TopCompanies from "../components/companies";
 import Footer from "../components/footer";
@@ -57,23 +58,21 @@ const Jobs = () => {
     ];
 
     // companies View Data as a maping
-    const companiesData = [
-        { name: "Dribbble", logo: "/images/dribbble.png", location: "United States" },
-        { name: "Dribbble", logo: "/images/dribbble.png", location: "United States" },
-        { name: "Dribbble", logo: "/images/dribbble.png", location: "United States" },
-        { name: "Upwork", logo: "/images/upwork.png", location: "United States" },
-        { name: "Upwork", logo: "/images/upwork.png", location: "United States" },
-        { name: "Upwork", logo: "/images/upwork.png", location: "United States" },
-        { name: "Slack", logo: "/images/slack.png", location: "China" },
-        { name: "Slack", logo: "/images/slack.png", location: "China" },
-        { name: "Slack", logo: "/images/slack.png", location: "China" },
-        { name: "Slack", logo: "/images/slack.png", location: "China" },
-        { name: "Freepik", logo: "/images/freepik.png", location: "United States" },
-        { name: "Freepik", logo: "/images/freepik.png", location: "United States" },
-        { name: "Freepik", logo: "/images/freepik.png", location: "United States" },
-        { name: "Freepik", logo: "/images/freepik.png", location: "United States" },
-        { name: "Freepik", logo: "/images/freepik.png", location: "United States" },
-    ]
+    const [companiesData, setCompaniesData] = useState([]);
+    
+        useEffect(() => {
+            const fetchCompanies = async () => {
+                try {
+                    const response = await fetch("http://localhost:5000/read/company"); // http://, ma ahan https://
+                    const data = await response.json();
+                    console.log("Fetched Companies:", data); // Console.log si aad u hubiso
+                    setCompaniesData(data);
+                } catch (error) {
+                    console.error("Error fetching companies data:", error);
+                }
+            };
+            fetchCompanies();
+        }, []);
 
     return(
         <>

@@ -132,6 +132,37 @@ const Home = () => {
 
             {/* companiesData View */}
             <TopCompanies companies={companiesData}/>
+
+            {/* box yada hooow ee employee and company */}
+            <div className="flex flex-col md:flex-row gap-6 p-6 max-w-6xl mx-auto mb-20">
+                {/* Become a Company */}
+                <motion.div 
+                    whileHover={{ scale: 1.05 }}
+                    className="flex-1 bg-gray-100 p-8 rounded-2xl shadow-md hover:shadow-lg transition-all"
+                >
+                    <h2 className="text-2xl font-semibold mb-4">Become a Company</h2>
+                    <p className="text-gray-600 mb-6">
+                    Unlock top-tier talent and elevate your business by hiring skilled professionals. Register now to access the best candidates for your company.
+                    </p>
+                    <button className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-all">
+                    Register Now →
+                    </button>
+                </motion.div>
+
+                {/* Become a Talent */}
+                <motion.div 
+                    whileHover={{ scale: 1.05 }}
+                    className="flex-1 bg-blue-600 text-white p-8 rounded-2xl shadow-md hover:shadow-lg transition-all"
+                >
+                    <h2 className="text-2xl font-semibold mb-4">Become a Employers</h2>
+                    <p className="mb-6">
+                    Turn your skills into opportunities! Join our platform and connect with top employers looking for professionals like you.
+                    </p>
+                    <button className="bg-white text-blue-600 py-2 px-4 rounded-lg hover:bg-gray-200 transition-all">
+                    Register Now →
+                    </button>
+                </motion.div>
+            </div>
         </div>
         <Footer/>
         </>

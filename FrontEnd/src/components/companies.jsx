@@ -2,10 +2,10 @@ import React from "react";
 
 const TopCompanies = ({ companies }) => {
   return (
-    <div className="bg-white ml[20%] pt-5">
+    <div className="bg-white pt-5 mb-10">
       <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">Top Companies</h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 ml-[14%]">
         {companies.map((company, index) => (
           <div
             key={index}
