@@ -9,7 +9,6 @@ const Login = (props) => {
 
   return (
     <>
-    <Header/>
     <div className="min-h-screen flex flex-col bg-gray-100">
       
       <div className="flex flex-1 items-center justify-center p-4">
@@ -40,7 +39,6 @@ const Login = (props) => {
       </div>
       
     </div>
-<Footer/>
     </>
   );
 };

@@ -4,6 +4,7 @@ const crypto = require("crypto");
 
 const CompanySchema = new mongoose.Schema({
   name: { type: String, required: true },
+  location: { type: String, required: true },
   logo: { type: String, required: true }, // Will store image URL after upload
   website: { type: String, required: true },
   email: { type: String, required: true, unique: true },

@@ -13,7 +13,7 @@ const TopCompanies = ({ companies }) => {
           >
             {/* Logo Section */}
             <div className="bg-gray-100 p-4 rounded-full flex items-center justify-center">
-              <img src={company.logo} alt={company.name} className="w-14 h-14 object-contain" />
+              <img src={`http://localhost:5000${company.logo}`}  alt={company.name} className="w-14 h-14 object-contain" />
             </div>
 
             {/* Company Info */}
@@ -24,7 +24,7 @@ const TopCompanies = ({ companies }) => {
 
             {/* Button */}
             <button className="mt-5 px-6 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-all">
-              Open Position
+              View
             </button>
           </div>
         ))}

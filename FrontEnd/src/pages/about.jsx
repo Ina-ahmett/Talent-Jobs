@@ -2,6 +2,7 @@ import React from "react";
 import wadaJir from "../assets/wadajir.jpg";
 import heshiis from "../assets/heshiis.png";
 import Header from "../components/header";
+import Footer from "../components/footer"
 
 const About = () => {
   return (
@@ -52,6 +53,7 @@ const About = () => {
 
       
     </div>
+    <Footer/>
     </>
   );
 };

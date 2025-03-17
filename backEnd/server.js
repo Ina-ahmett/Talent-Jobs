@@ -19,6 +19,7 @@ mongoose.connect(process.env.MONGO_URI)
 app.use(companyRoutes);
 app.use(employeeRoutes);
 app.use(jobRoutes);
+app.use("/uploads", express.static("uploads"));
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

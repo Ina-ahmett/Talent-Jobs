@@ -10,8 +10,7 @@ import SignUp from "./pages/signup"
 
 const App = () =>{
   return(
-    <div>
-      
+    <div>   
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/jobs" element={<Jobs/>}/>

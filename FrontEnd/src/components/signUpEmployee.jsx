@@ -3,6 +3,7 @@ import axios from "axios";
 
 const CreateCompanyForm = () => {
   const [name, setName] = useState("");
+  const [location, setLocation] = useState("");
   const [website, setWebsite] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,6 +14,7 @@ const CreateCompanyForm = () => {
 
     const formData = new FormData();
     formData.append("name", name);
+    formData.append("location", location);
     formData.append("website", website);
     formData.append("email", email);
     formData.append("password", password);
@@ -40,7 +42,7 @@ const CreateCompanyForm = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto my-10 p-6 border rounded-lg shadow-lg bg-white">
+    <div className="max-w-lg mx-auto my-10 p-6 rounded-lg shadow-xl bg-white">
       <h1 className="text-2xl font-semibold mb-6">Create a Company</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
@@ -53,6 +55,11 @@ const CreateCompanyForm = () => {
             required
             className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
+        </div>
+
+        <div className="mb-4">
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700">Company Location:</label>
+          <input type="text" id="name" value={location} onChange={(e) => setLocation(e.target.value)} required className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
 
         <div className="mb-4">
