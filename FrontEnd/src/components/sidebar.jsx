@@ -1,35 +1,36 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import logo from "../assets/Talent-Jobs.png";
 
 const Sidebar = () => {
-  const [active, setActive] = useState("Dashboard");
-  const navigate = useNavigate(); // Isticmaal navigate si aad page ugu wareejiso
-
-  const menuItems = [
-    { name: "Dashboard", icon: "fa-th-large", path: "/dashboard"  },
-    { name: "Companies", icon: "fa-box", path: "/Reading" }, // Companies page
-  ];
-
   return (
-    <div className="w-64 fixed h-screen bg-white shadow-md p-5">
-      <h1 className="text-xl font-bold flex items-center gap-2">
-        <span className="border border-black p-1 rounded-full">⬡</span> Dashboard 
-      </h1>
+    <div className="w-64 h-screen bg-white shadow-md p-5 fixed top-0 left-0">
+      {/* Logo Section */}
+      <div className="flex items-center gap-3 mb-6">
+        <img src={logo} alt="Talent Jobs Logo" className="w-10 h-10" />
+        <h1 className="text-xl font-bold text-gray-800">Talent Jobs</h1>
+      </div>
+
       <ul className="mt-8">
-        {menuItems.map((item) => (
-          <li
-            key={item.name}
-            className={`flex items-center gap-3 p-3 my-2 rounded-lg cursor-pointer transition-all ${
-              active === item.name ? "bg-purple-600 text-white" : "text-gray-600 hover:bg-gray-100"
-            }`}
-            onClick={() => {
-              setActive(item.name);
-              navigate(item.path); // Wareeji page-ka
-            }}
-          >
-            <i className={`fas ${item.icon}`}></i> {item.name}
-          </li>
-        ))}
+        <li className="p-3 my-2 rounded-lg transition-all text-gray-600 hover:bg-gray-100">
+          <Link to="/dashboard" className="flex items-center gap-3">
+            <i className="fas fa-th-large"></i> Dashboard
+          </Link>
+        </li>
+        <li className="p-3 my-2 rounded-lg transition-all text-gray-600 hover:bg-gray-100">
+          <Link to="/companies" className="flex items-center gap-3">
+            <i className="fas fa-building"></i> Companies
+          </Link>
+        </li>
+        <li className="p-3 my-2 rounded-lg transition-all text-gray-600 hover:bg-gray-100">
+          <Link to="/jobs" className="flex items-center gap-3">
+            <i className="fas fa-briefcase"></i> Jobs
+          </Link>
+        </li>
+        <li className="p-3 my-2 rounded-lg transition-all text-gray-600 hover:bg-gray-100">
+          <Link to="/settings" className="flex items-center gap-3">
+            <i className="fas fa-cog"></i> Settings
+          </Link>
+        </li>
       </ul>
     </div>
   );
