@@ -1,4 +1,4 @@
-import {Routes, Route, Router} from "react-router-dom"
+import {Routes, Route} from "react-router-dom"
 import Home from "./pages/home"
 import About from "./pages/about"
 import Jobs from "./pages/jobs"
@@ -7,6 +7,7 @@ import Login from "./pages/login"
 import Dashboard from "./pages/backendPages/dashboard"
 import SignUp from "./pages/signup"
 import Companies from "./pages/backendPages/companies"
+import ProtectedRoute from "./components/ProtectedRoute"
 
 const App = () =>{
   return(
@@ -18,16 +19,19 @@ const App = () =>{
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/login" element={<Login/>} />
         <Route path="/create" element={<SignUp/>}/>
+        <Route path="/dashboard" element={
+          <ProtectedRoute>
+            <Dashboard/>
+          </ProtectedRoute>
+        }/>
+        <Route path="/companies" element={
+          <ProtectedRoute>
+            <Companies/>
+          </ProtectedRoute>
+        }/>
       </Routes>
-
-      {/* backEnd waye kuwan links wayee */}
-      <div>
-        <Routes>
-          <Route path="/dashboard" element={<Dashboard/>}/>
-          <Route path="/companies" element={<Companies/>}/>
-        </Routes>
-      </div>
     </div>
   )
 }
+
 export default App
