@@ -1,10 +1,9 @@
 import React from "react";
-import Header from "../components/header";
-import Footer from "../components/footer";
 import logo from "../assets/Talent-Jobs.png"; // Hubi in aad ku dartay image-ka logo
 import { Link, useNavigate } from "react-router-dom";
 
 const Login = (props) => {
+  //Login page waye waana tijabinaaa
     const navigate = useNavigate();
 
   return (
