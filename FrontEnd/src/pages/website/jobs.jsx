@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import jobSearchImage from "../assets/jobheader.jpg"
-import TopCompanies from "../components/companies";
-import Footer from "../components/footer";
-import Header from "../components/header";
-import JobCard from "../components/jobsComponents";
+import jobSearchImage from "../../assets/jobheader.jpg"
+import TopCompanies from "../../components/website/companies";
+import Footer from "../../components/website/footer";
+import Header from "../../components/website/header";
+import JobCard from "../../components/website/jobsComponents";
 const Jobs = () => {
     // jobs maping madama aan isticmaleynin API
     const jobs = [

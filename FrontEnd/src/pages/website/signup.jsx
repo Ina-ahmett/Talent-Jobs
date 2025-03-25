@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const CreateCompanyForm = () => {
+const SignUp   = () => {
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
   const [website, setWebsite] = useState("");
@@ -115,4 +115,4 @@ const CreateCompanyForm = () => {
   );
 };
 
-export default CreateCompanyForm;
+export default SignUp ;

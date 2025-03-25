@@ -1,6 +1,6 @@
 import { FaFacebook, FaYoutube, FaInstagram, FaTwitter } from "react-icons/fa";
 import { motion } from "framer-motion";
-import LogoImage from "../assets/Talent-Jobs.png";
+import LogoImage from "../../assets/Talent-Jobs.png";
 
 const Footer = () => {
   return (

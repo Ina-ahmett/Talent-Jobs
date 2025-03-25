@@ -4,7 +4,6 @@ const cors = require("cors");
 const companyRoutes = require("./routers/companyRoutes");
 const employeeRoutes = require("./routers/employeeRoutes");
 const jobRoutes = require("./routers/jobRoutes");
-const authRoutes = require("./routers/authRoutes");
 const path = require("path");
 require("dotenv").config();
 
@@ -32,7 +31,6 @@ mongoose.connect(process.env.MONGO_URI)
   .catch(err => console.log(err));
 
 // Routes
-app.use("/auth", authRoutes);
 app.use("/", companyRoutes);
 app.use("/", employeeRoutes);
 app.use("/", jobRoutes);

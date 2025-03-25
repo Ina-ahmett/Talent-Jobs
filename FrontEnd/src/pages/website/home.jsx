@@ -1,9 +1,9 @@
-import heroSectionImg from "../assets/heroSection.jpg"
-import CategoryProps from "../components/Category"
-import TopCompanies from "../components/companies";
-import Footer from "../components/footer";
-import Header from "../components/header";
-import JobItem from "../components/JobItem"
+import heroSectionImg from "../../assets/heroSection.jpg"
+import CategoryProps from "../../components/website/Category";
+import TopCompanies from "../../components/website/companies";
+import Footer from "../../components/website/footer";
+import Header from "../../components/website/header";
+import JobItem from "../../components/website/JobItem"
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 

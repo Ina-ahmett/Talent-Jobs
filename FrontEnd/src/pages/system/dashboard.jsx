@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom"
-import ContactDetails from "../../components/contactDetails"
-import Sidebar from "../../components/sidebar"
+import ContactDetails from "../../components/system/companyDetails"
+import Sidebar from "../../components/system/sidebar"
 import Companies from "./companies"
 
 const Dashboard = () => {

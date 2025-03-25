@@ -1,8 +1,8 @@
 import React from "react";
-import wadaJir from "../assets/wadajir.jpg";
-import heshiis from "../assets/heshiis.png";
-import Header from "../components/header";
-import Footer from "../components/footer"
+import wadaJir from "../../assets/wadajir.jpg";
+import heshiis from "../../assets/heshiis.png";
+import Header from "../../components/website/header";
+import Footer from "../../components/website/footer"
 
 const About = () => {
   return (

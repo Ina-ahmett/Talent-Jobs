@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Sidebar from "../../components/sidebar";
+import Sidebar from "../../components/system/sidebar";
 
 const Companies = () => {
   const [companies, setCompanies] = useState([]);
 
+  const fetchCompanies = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/read/company");
+      setCompanies(response.data);
+    } catch (error) {
+      console.error("Error fetching companies:", error);
+    }
+  };
   useEffect(() => {
-    const fetchCompanies = async () => {
-      try {
-        const response = await axios.get("http://localhost:5000/read/company");
-        setCompanies(response.data);
-      } catch (error) {
-        console.error("Error fetching companies:", error);
-      }
-    };
     fetchCompanies();
   }, []);
 
@@ -26,10 +26,10 @@ const Companies = () => {
     }
   };
 
-  const handleView = (companyId) => {
-    // Navigate to company details page or open in a new window
-    window.open(`http://localhost:5000/company/${companyId}`, "_blank");
-  };
+  // const handleView = (companyId) => {
+  //   // Navigate to company details page or open in a new window
+  //   window.open(`http://localhost:5000/company/${companyId}`, "_blank");
+  // };
 
   return (
     <div>

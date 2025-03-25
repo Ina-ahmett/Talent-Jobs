@@ -1,6 +1,6 @@
-import doneImage from "../assets/done.jpg"   
-import Footer from "../components/footer";
-import Header from "../components/header";
+import doneImage from "../../assets/done.jpg"   
+import Footer from "../../components/website/footer";
+import Header from "../../components/website/header";
 
 
 export default function Contact() {

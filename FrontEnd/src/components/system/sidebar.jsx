@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/Talent-Jobs.png";
+import logo from "../../assets/Talent-Jobs.png";
 
 const Sidebar = () => {
   return (

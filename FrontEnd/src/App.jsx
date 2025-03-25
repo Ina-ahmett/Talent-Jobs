@@ -1,34 +1,35 @@
 import {Routes, Route} from "react-router-dom"
-import Home from "./pages/home"
-import About from "./pages/about"
-import Jobs from "./pages/jobs"
-import Contact from "./pages/contact"
-import Login from "./pages/login"
-import Dashboard from "./pages/backendPages/dashboard"
-import SignUp from "./pages/signup"
-import Companies from "./pages/backendPages/companies"
-import ProtectedRoute from "./components/ProtectedRoute"
+import Home from "./pages/website/home"
+import About from "./pages/website/about"
+import Jobs from "./pages/website/jobs"
+import Contact from "./pages/website/contact"
+import Login from "./pages/website/login"
+import Dashboard from "./pages/system/dashboard"
+import SignUp from "./pages/website/signup"
+import Companies from "./pages/system/companies"
 
 const App = () =>{
   return(
-    <div>   
+    <div>  
+      {/* website routes */}  
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/jobs" element={<Jobs/>}/>
         <Route path="/about" element={<About/>} />
         <Route path="/contact" element={<Contact/>}/>
+      </Routes>
+
+      {/* login and signup routes */}
+      <Routes>
         <Route path="/login" element={<Login/>} />
         <Route path="/create" element={<SignUp/>}/>
-        <Route path="/dashboard" element={
-          <ProtectedRoute>
-            <Dashboard/>
-          </ProtectedRoute>
-        }/>
-        <Route path="/companies" element={
-          <ProtectedRoute>
-            <Companies/>
-          </ProtectedRoute>
-        }/>
+      </Routes>
+        
+        
+      {/* system routes */}
+      <Routes>
+        <Route path="/dashboard" element={ <Dashboard/> }/>
+        <Route path="/companies" element={ <Companies/> }/>
       </Routes>
     </div>
   )
