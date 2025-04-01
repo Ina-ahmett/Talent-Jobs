@@ -15,12 +15,12 @@ const upload = multer({ storage });
 // Create a new company
 exports.createCompany = async (req, res) => {
   try {
-    const { name, location, website, email, password } = req.body;
+    const { name, phone, companyType, industry, description, establishedYear, location, website, email, password } = req.body;
     const logo = req.file ? `/uploads/${req.file.filename}` : "";
 
     const securePassword = password || crypto.randomBytes(16).toString("hex");
 
-    const company = await Company.create({ name, logo, location, website, email, password: securePassword });
+    const company = await Company.create({ name, phone, companyType, industry, description, establishedYear, logo, location, website, email, password: securePassword });
     res.status(201).json(company);
   } catch (error) {
     res.status(400).json({ error: error.message });

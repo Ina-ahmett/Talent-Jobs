@@ -10,18 +10,33 @@ import { useEffect, useState } from "react";
 const Home = () => {
     const [companiesData, setCompaniesData] = useState([]);
 
+    // fetch reading all companies data
+    const fetchCompanies = async () => {
+        try {
+            const response = await fetch("http://localhost:5000/read/company"); // http://, ma ahan https://
+            const data = await response.json();
+            console.log("Fetched Companies:", data); // Console.log si aad u hubiso
+            setCompaniesData(data);
+        } catch (error) {
+            console.error("Error fetching companies data:", error);
+        }
+    };
+
+    // fetch reading singlge companies data
+    const fetchSingleCompany = async () => {
+        try {
+            const response = await fetch(`http://localhost:5000/readSingle/company/${id}`);
+            const data = await response.json();
+            console.log("Fetched Single Company:", data);
+            setSingleCompany(data);
+        } catch (error) {
+            console.error("Error fetching single company data:", error);
+        }
+    }
+
     useEffect(() => {
-        const fetchCompanies = async () => {
-            try {
-                const response = await fetch("http://localhost:5000/read/company"); // http://, ma ahan https://
-                const data = await response.json();
-                console.log("Fetched Companies:", data); // Console.log si aad u hubiso
-                setCompaniesData(data);
-            } catch (error) {
-                console.error("Error fetching companies data:", error);
-            }
-        };
         fetchCompanies();
+        fetchSingleCompany();
     }, []);
     
 

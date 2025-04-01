@@ -1,9 +1,7 @@
 const express = require("express");
 const { createCompany, getCompanies, getCompanyById, updateCompany, deleteCompany } = require("../controllers/companyController");
-const multer = require("multer");
+const upload = require("../Middleware/uploadMiddleware");
 const router = express.Router();
-
-const upload = multer({ dest: "uploads/" });
 
 router.post("/create/company", upload.single("logo"), createCompany);
 router.get("/read/company", getCompanies);

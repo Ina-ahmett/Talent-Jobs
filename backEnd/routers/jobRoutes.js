@@ -1,9 +1,7 @@
 const express = require("express");
 const { createJob, getJobs, getJobById, updateJob, deleteJob } = require("../controllers/jobController");
-const multer = require("multer");
+const upload = require("../Middleware/uploadMiddleware");
 const router = express.Router();
-
-const upload = multer({ dest: "uploads/" });
 
 router.post("/create/jobs", upload.single("image"), createJob);
 router.get("/read/jobs", getJobs);

@@ -22,7 +22,7 @@ const Login = (props) => {
           {/* Login Form */}
           <h2 className="mb-6 text-2xl font-bold text-gray-800">Admin Sign In</h2>
           <p className="mb-4 text-gray-500">
-            Don't have an account? <a href="/create" className="text-blue-600">Create Account</a>
+            Don't have an account? <a href="/jobseeker/create" className="text-blue-600">Create Account</a>
           </p>
           
           <form className="w-full">

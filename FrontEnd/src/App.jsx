@@ -5,9 +5,9 @@ import Jobs from "./pages/website/jobs"
 import Contact from "./pages/website/contact"
 import Login from "./pages/website/login"
 import Dashboard from "./pages/system/dashboard"
-import SignUp from "./pages/website/signup"
 import Companies from "./pages/system/companies"
-
+import CompnaySignup from "./pages/website/compnaySignup"
+import JobseekerSignup from "./pages/website/jobseekerSignup"
 const App = () =>{
   return(
     <div>  
@@ -22,7 +22,8 @@ const App = () =>{
       {/* login and signup routes */}
       <Routes>
         <Route path="/login" element={<Login/>} />
-        <Route path="/create" element={<SignUp/>}/>
+        <Route path="/company/create" element={<CompnaySignup/>}/>
+        <Route path="/jobseeker/create" element={<JobseekerSignup/>}/>
       </Routes>
         
         

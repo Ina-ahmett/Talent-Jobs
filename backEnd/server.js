@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const companyRoutes = require("./routers/companyRoutes");
-const employeeRoutes = require("./routers/employeeRoutes");
+const jobseekerRoutes = require("./routers/jobseekerRoutes");
 const jobRoutes = require("./routers/jobRoutes");
 const path = require("path");
 require("dotenv").config();
@@ -11,7 +11,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:5173', // Your frontend URL
+  origin: 'http://localhost:5173',  // Your frontend URL
   credentials: true
 }));
 
@@ -32,7 +32,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 // Routes
 app.use("/", companyRoutes);
-app.use("/", employeeRoutes);
+app.use("/", jobseekerRoutes);
 app.use("/", jobRoutes);
 
 // 404 handler
