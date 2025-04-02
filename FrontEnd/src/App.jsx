@@ -8,6 +8,8 @@ import Dashboard from "./pages/system/dashboard"
 import Companies from "./pages/system/companies"
 import CompnaySignup from "./pages/website/compnaySignup"
 import JobseekerSignup from "./pages/website/jobseekerSignup"
+import YourJobs from "./pages/website/yourJobs"
+
 const App = () =>{
   return(
     <div>  
@@ -17,6 +19,7 @@ const App = () =>{
         <Route path="/jobs" element={<Jobs/>}/>
         <Route path="/about" element={<About/>} />
         <Route path="/contact" element={<Contact/>}/>
+        <Route path="/yourJobs" element={<YourJobs/>}/>
       </Routes>
 
       {/* login and signup routes */}
